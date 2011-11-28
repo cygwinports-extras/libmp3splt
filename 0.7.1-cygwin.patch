@@ -1,0 +1,43 @@
+--- origsrc/libmp3splt-0.7.1/src/oformat_parser.c	2011-11-11 15:14:03.000000000 -0600
++++ src/libmp3splt-0.7.1/src/oformat_parser.c	2011-11-27 23:25:44.790467100 -0600
+@@ -301,7 +301,7 @@ char splt_of_get_number_of_digits_from_t
+   }
+ 
+   long minutes = total_time / 100 / 60;
+-  int i = (int) (log10l((long double) minutes));
++  int i = (int) (log10((long) minutes));
+   char number_of_digits = (char) (i + '1');
+   if (number_of_digits == '1')
+   {
+--- origsrc/libmp3splt-0.7.1/src/plugins.c	2011-11-11 16:24:27.000000000 -0600
++++ src/libmp3splt-0.7.1/src/plugins.c	2011-11-27 23:15:17.763603200 -0600
+@@ -137,7 +137,11 @@ static int splt_p_filter_plugin_files(co
+     return 0;
+   }
+ 
++#ifdef __CYGWIN__
++  if (strncmp(file,"cygsplt_", 8) != 0)
++#else
+   if (strncmp(file,"libsplt_", 8) != 0)
++#endif
+   {
+     return 0;
+   }
+@@ -146,7 +150,7 @@ static int splt_p_filter_plugin_files(co
+ 
+   p_start = strchr(file,'.');
+ 
+-#ifndef __WIN32__
++#if !defined(__WIN32__) && !defined(__CYGWIN__)
+   //gnu/linux .so.0
+   p_end = strstr(file, ".so.0");
+   if (p_end != NULL && (p_start == p_end) && (*(p_end+5) == '\0'))
+@@ -159,7 +163,7 @@ static int splt_p_filter_plugin_files(co
+   if ((p_end != NULL) && (p_start == p_end))
+   {
+     //windows .dll
+-#ifdef __WIN32__
++#if defined(__WIN32__) || defined(__CYGWIN__)
+     if (strcmp(p_end,".dll") == 0)
+     {
+       return 1;

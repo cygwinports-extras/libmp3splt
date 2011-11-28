@@ -1,0 +1,11 @@
+--- origsrc/libmp3splt-0.7.1/doc/Makefile.am	2011-09-04 15:48:23.000000000 -0500
++++ src/libmp3splt-0.7.1/doc/Makefile.am	2011-11-27 23:26:46.745010700 -0600
+@@ -6,7 +6,7 @@ html: doc
+ doc: doxyfile.temp
+ 
+ doxyfile.temp:
+-	cat Doxyfile.in >Doxyfile
++	cat $(srcdir)/Doxyfile.in >Doxyfile
+ if HAVE_GRAPHVIZ
+ 	echo "HAVE_DOT = YES" >> Doxyfile
+ else

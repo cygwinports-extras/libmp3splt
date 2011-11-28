@@ -1,0 +1,22 @@
+--- origsrc/libmp3splt-0.7.1/plugins/Makefile.am	2011-10-28 15:16:12.000000000 -0500
++++ src/libmp3splt-0.7.1/plugins/Makefile.am	2011-11-27 23:28:33.010088700 -0600
+@@ -5,7 +5,7 @@ plugin_LTLIBRARIES =
+ #ccommon_LDFLAGS = -module -export-dynamic -avoid-version
+ common_CPPFLAGS = -I$(top_srcdir)/include/libmp3splt -I$(top_srcdir)/src
+ common_LDFLAGS = -L$(top_builddir)/src -L$(top_builddir)/src/.libs -L/lib \
+-   -no-undefined -lm -lmp3splt @LIBINTL@
++   -no-undefined -module -lm -lmp3splt @LTLIBINTL@
+ 
+ if WIN32
+ common_LDFLAGS += -lz -lws2_32 -lintl
+--- origsrc/libmp3splt-0.7.1/src/Makefile.am	2011-05-27 15:20:19.000000000 -0500
++++ src/libmp3splt-0.7.1/src/Makefile.am	2011-11-27 23:24:40.916813800 -0600
+@@ -8,7 +8,7 @@ lib_LTLIBRARIES = libmp3splt.la
+ 
+ libmp3splt_la_LDFLAGS = -no-undefined -version-info 0:5:0
+ libmp3splt_la_CPPFLAGS = -I$(top_srcdir)/include/libmp3splt
+-libmp3splt_la_LIBADD = @LIBINTL@ -lm
++libmp3splt_la_LIBADD = @LTLIBINTL@ -lm
+ 
+ if PCRE
+ libmp3splt_la_LIBADD += @PCRE_LIBS@ 

@@ -1,0 +1,13 @@
+DESCRIPTION="MP3/Ogg file splitter library"
+HOMEPAGE="http://mp3splt.sourceforge.net/"
+SRC_URI="mirror://sourceforge/mp3splt/${P}.tar.gz"
+
+PKG_NAMES="${PN}0 ${PN}-devel ${PN}-doc"
+libmp3splt0_CONTENTS="--exclude=doxygen usr/bin/cygmp3splt-0.dll usr/lib/libmp3splt/
+                      usr/share/doc/ usr/share/locale/"
+libmp3splt_devel_CONTENTS="usr/include/ usr/lib/libmp3splt.* usr/share/aclocal/"
+libmp3splt_doc_CONTENTS="usr/share/doc/${PN}/doxygen/"
+
+DIFF_EXCLUDES="libltdl argz.m4 ltdl.m4"
+
+CYGCONF_ARGS="--disable-static"
