@@ -1,5 +1,5 @@
 category: Audio
-requires: libgcc1 libid3tag0 libintl8 libltdl7 libmad0 libogg0 libpcre0 libvorbis0 libvorbisfile3
+requires: libgcc1 libid3tag0 libintl8 libltdl7 libmad0 libogg0 libpcre1 libvorbis0 libvorbisfile3
 external-source: libmp3splt
 sdesc: "MP3/Ogg file splitter library (runtime)"
 ldesc: "Mp3splt-project is a utility to split mp3 and ogg files 

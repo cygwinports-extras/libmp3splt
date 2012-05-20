@@ -1,5 +1,5 @@
 category: Audio
-requires: libmp3splt0 gettext libtool libpcre-devel
+requires: libmp3splt0 libtool
 external-source: libmp3splt
 sdesc: "MP3/Ogg file splitter library (development)"
 ldesc: "Mp3splt-project is a utility to split mp3 and ogg files 
