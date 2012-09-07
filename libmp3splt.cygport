@@ -1,4 +1,14 @@
-DESCRIPTION="MP3/Ogg file splitter library"
+NAME="libmp3splt"
+VERSION=0.7.3
+RELEASE=1
+CATEGORY="Audio"
+SUMMARY="MP3/Ogg file splitter library"
+DESCRIPTION="Mp3splt-project is a utility to split mp3 and ogg files selecting
+a begin and an end time position, without decoding. It's very useful to split
+large mp3/ogg to make smaller files or to split entire albums to obtain
+original tracks. If you want to split an album, you can select split points
+and filenames manually or you can get them automatically from CDDB or from
+.cue files."
 HOMEPAGE="http://mp3splt.sourceforge.net/"
 SRC_URI="mirror://sourceforge/mp3splt/${P}.tar.gz"
 
@@ -15,7 +25,5 @@ libmp3splt_devel_CONTENTS="usr/include/ usr/lib/libmp3splt.* usr/share/aclocal/"
 libmp3splt_doc_CONTENTS="usr/share/doc/${PN}/doxygen/"
 
 DIFF_EXCLUDES="libltdl argz.m4 ltdl.m4"
-
-CYGCONF_ARGS="--disable-static"
 
 KEEP_LA_FILES="none"
