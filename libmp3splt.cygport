@@ -1,5 +1,5 @@
 NAME="libmp3splt"
-VERSION=0.7.3
+VERSION=0.8
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="MP3/Ogg file splitter library"
@@ -15,11 +15,11 @@ SRC_URI="mirror://sourceforge/mp3splt/${P}.tar.gz"
 PATCH_URI="
 	0.7.1-cygwin.patch
 	0.7.1-ldflags.patch
-	0.7.1-vpath.patch
+	0.8-vpath.patch
 "
 
 PKG_NAMES="${PN}0 ${PN}-devel ${PN}-doc"
-libmp3splt0_CONTENTS="--exclude=doxygen usr/bin/cygmp3splt-0.dll usr/lib/libmp3splt/
+libmp3splt0_CONTENTS="--exclude=doxygen usr/bin/cygmp3splt-0.dll usr/lib/libmp3splt0/
                       usr/share/doc/ usr/share/locale/"
 libmp3splt_devel_CONTENTS="usr/include/ usr/lib/libmp3splt.* usr/share/aclocal/"
 libmp3splt_doc_CONTENTS="usr/share/doc/${PN}/doxygen/"
