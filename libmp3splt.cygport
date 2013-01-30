@@ -1,5 +1,5 @@
 NAME="libmp3splt"
-VERSION=0.8
+VERSION=0.8.1a
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="MP3/Ogg file splitter library"
